@@ -25,21 +25,39 @@ const App = () => {
 		getMovieRequest(searchValue)
 		}, [searchValue])
 
-    const addDiaryFilm = (film) => {
+  useEffect(() => {
+      const filmDiaries = JSON.parse(
+        localStorage.getItem('react-movie-app-diaries')
+      )
+      if (filmDiaries) {
+        setDiaries(filmDiaries);
+      }
+  }, [])
+
+  const addDiaryFilm = (film) => {
       const newDiaryList = [...diaries, film];
       setDiaries(newDiaryList);
-    };
+      saveToLocalStorage(newDiaryList);
+      var today = new Date(),
+      datey = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+      localStorage.setItem('date'+ film.imdbID, datey);
 
-    const removeDiaryFilm = (film) => {
+  };
+
+  const removeDiaryFilm = (film) => {
       const newDiaryList = diaries.filter(
         (diary) => diary.imdbID !== film.imdbID
       );
       setDiaries(newDiaryList);
-    };
+      saveToLocalStorage(newDiaryList);
+  };	
   
+  const saveToLocalStorage = (items) => {
+		localStorage.setItem('react-movie-app-diaries', JSON.stringify(items));
+	};  
 
   return (
-    <div classname="app" style={{backgroundColor:"#1a1f22"}} >
+    <div className="app" style={{backgroundColor:"#1a1f22"}} >
       <Menu style={{backgroundColor:"#15191b", color:"white", height:"100px"}}>
 				<Menu.Menu style={{marginLeft:"5%", marginTop:".5%"}} position="left"><br></br>
 					<h1>Boxd.</h1>

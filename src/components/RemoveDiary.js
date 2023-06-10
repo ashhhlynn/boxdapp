@@ -5,7 +5,7 @@ const RemoveDiary = () => {
 	return (
 		<>
 
-<Button floated="right" basic ><center><Icon name="add"/></center>
+<Button floated="right" basic ><center><Icon name="minus"/></center>
 			
 			</Button>
 			
