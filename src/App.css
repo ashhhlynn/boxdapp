@@ -16,12 +16,12 @@
 }
 
 .stars .ui.rating{
-  background-color: #d2f9d0 !important;
   color: pink !important;
 }
 
 .stars {
-  color: white !important;
+  color: pink !important;
+
 }
 
 h1, h2, h3, h5 {
