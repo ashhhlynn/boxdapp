@@ -6,13 +6,15 @@ A Letterboxd inspired application created with JavaScript and React for rating a
   
 ## Functionality
 
-- Fetches from OMDb API database to allow search, sort, and display of over 1000 films
+- Search, sort, and display of over 1000 films through fetches from OMDb API database
 
-- Users can rate and log films to personal diary on five star scale by date
+- Users can rate and log films to personal diary on five star scale, organized by date
 
-- Users can edit film ratings and delete diary logs
+- Users can edit their film ratings 
 
-- Stores user data through localStorage
+- Users can delete their film diary logs
+
+- User data stored through localStorage
 
 ## Tech Stack
 
@@ -26,5 +28,6 @@ A Letterboxd inspired application created with JavaScript and React for rating a
 ## Instructions
 
 - clone this repo to your local environment -- git clone < git repository >
+- cd into repo
 - run $'npm install' into your command line
 - run $'npm start' into your command line
