@@ -1,13 +1,13 @@
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 import React, { useState, useEffect } from 'react';
-import { Segment, Icon, Menu, Divider, Container } from 'semantic-ui-react'
+import { Icon, Menu, Divider, Container } from 'semantic-ui-react'
 import WelcomeFilms from './components/WelcomeFilms';
 import Films from './components/Films';
 import Diaries from './components/Diaries';
 import SearchBox from './components/SearchBox';
 import AddDiary from './components/AddDiary';
-
+import RemoveDiary from './components/RemoveDiary';
 
 const App = () => {
 	const [films, setFilms] = useState([])
@@ -29,8 +29,17 @@ const App = () => {
       const newDiaryList = [...diaries, film];
       setDiaries(newDiaryList);
     };
+
+    const removeDiaryFilm = (film) => {
+      const newDiaryList = diaries.filter(
+        (diary) => diary.imdbID !== film.imdbID
+      );
+      setDiaries(newDiaryList);
+    };
+  
+
   return (
-    <div classname="app">
+    <div classname="app" style={{backgroundColor:"#1a1f22"}} >
       <Menu style={{backgroundColor:"#15191b", color:"white", height:"100px"}}>
 				<Menu.Menu style={{marginLeft:"5%", marginTop:".5%"}} position="left"><br></br>
 					<h1>Boxd.</h1>
@@ -50,7 +59,9 @@ const App = () => {
         />
         <Divider></Divider>
         <Diaries
-					films={films}
+					films={diaries}
+          handleDiaryClick={removeDiaryFilm}
+					diaryComponent={RemoveDiary}
         />
       </Container>
     </div>

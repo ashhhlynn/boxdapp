@@ -16,10 +16,11 @@
   background-color: #1a1f22;
 }
 
-.h1, h2, h3 {
+h1, h2, h3 {
   font-weight: normal !important;
-  color: white !important;
   letter-spacing:1.5px !important;
+  font-family: "Consolas" !important;
+
 }
 
 .ui.Container {

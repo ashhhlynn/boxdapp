@@ -16,7 +16,7 @@ const Films = (props) => {
             <div onClick={() => props.handleDiaryClick(movie)}>
                 <Popup.Content>
                 <Button floated="right" basic >
-                <center><Icon name="add"/></center>
+                <center>Log Film to Diary <Icon name="add"/></center>
             </Button>
             </Popup.Content>
         </div>
