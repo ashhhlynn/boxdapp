@@ -1,16 +1,17 @@
 import React from 'react'
-import { Header, Image, Button, Item, Divider } from 'semantic-ui-react'
+import { Header, Image, Button, Item, Icon, Divider } from 'semantic-ui-react'
 import MovieRating from './MovieRating'
 import MovieDate from './MovieDate'
 
 const Diaries = (props) => {
-	const DiaryComponent = props.diaryComponent;
 	return (
 		<>
 		{props.films.map((movie, index) => (
 			<Item style={{marginLeft:"5%", marginRight:"5%"}}>
                 <div onClick={() => props.handleDiaryClick(movie)}>
-                    <Button floated="right" size="mini" inverted basic>X</Button>
+                    <Button floated="right" size="mini" inverted basic>
+                        <center><Icon name="delete"/></center>
+                    </Button>
 				</div>
                 <Header as="h5" floated="right" style={{color:"white", textAlign:"right"}}>
                     <h3>{movie.Title} </h3>

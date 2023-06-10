@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, Popup, Icon, Image } from 'semantic-ui-react'
 
 const Films = (props) => {
-	const DiaryComponent = props.diaryComponent;
 
 	return (
 		<Card.Group itemsPerRow={5}>

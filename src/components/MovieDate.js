@@ -1,4 +1,4 @@
-import { Label, Icon} from 'semantic-ui-react'
+import { Label } from 'semantic-ui-react'
 import React, { Component } from 'react'
 
 export default class MovieDate extends Component {
@@ -14,7 +14,7 @@ export default class MovieDate extends Component {
         return (
             <>
                 <Label inverted style={{backgroundColor:"#FFFEEF", color:"black"}}>
-                    <h5><Icon name='calendar alternate'></Icon><b>{this.state.date}</b></h5><br></br>
+                    <h5><b>{this.state.date}</b></h5><br></br>
                 </Label>
             </>
         )

@@ -41,7 +41,6 @@ const App = () => {
       var today = new Date(),
       datey = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
       localStorage.setItem('date'+ film.imdbID, datey);
-
   };
 
   const removeDiaryFilm = (film) => {
