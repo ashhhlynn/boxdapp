@@ -1,4 +1,4 @@
-import { Label } from 'semantic-ui-react'
+import { Label, Icon } from 'semantic-ui-react'
 import React, { Component } from 'react'
 
 export default class MovieDate extends Component {
@@ -13,8 +13,9 @@ export default class MovieDate extends Component {
     render() {
         return (
             <>
-                <Label inverted style={{backgroundColor:"#FFFEEF", color:"black"}}>
-                    <h5><b>{this.state.date}</b></h5><br></br>
+                <Label style={{backgroundColor:"#FFFEEF", color:"black"}}>
+                    <h5><b>{this.state.date}</b></h5>
+                    <center><Icon size="large" name='calendar check outline'/></center>
                 </Label>
             </>
         )

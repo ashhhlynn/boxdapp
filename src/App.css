@@ -9,7 +9,6 @@
 
 .app {
   text-align: center;
-  font-family: "Consolas" !important;
   font-weight: normal !important;
   color: white !important;
   letter-spacing:1.5px !important;
@@ -19,23 +18,20 @@
 .stars .ui.rating{
   background-color: #d2f9d0 !important;
   color: pink !important;
-
 }
 
 .stars {
   color: white !important;
 }
 
-
 h1, h2, h3, h5 {
   font-weight: normal !important;
   letter-spacing:1.5px !important;
 }
 
-h4{
+h4 {
   letter-spacing:1.5px !important;
   font-weight: normal !important;
-
 }
 
 .ui.Container {
