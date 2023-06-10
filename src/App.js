@@ -48,7 +48,9 @@ const App = () => {
       )
       setDiaries(newDiaryList)
       saveToLocalStorage(newDiaryList)
-  };	
+      localStorage.removeItem(film.imdbID)
+      localStorage.removeItem('date'+ film.imdbID)
+  }
   
   const saveToLocalStorage = (items) => {
 		localStorage.setItem('react-movie-app-diaries', JSON.stringify(items))
