@@ -12,12 +12,12 @@ export default class MovieDate extends Component {
 
     render() {
         return (
-            <>
-                <Label style={{marginTop:"10%", backgroundColor:"#FFFEEF", color:"black"}}>
+            <div>
+                <Label style={{ backgroundColor:"#FFFEEF", color:"black"}}>
                     2023
                     <h2 ><b>{this.state.date}</b></h2>
                 </Label>
-            </>
+            </div>
         )
     }
 }
