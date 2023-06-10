@@ -5,7 +5,7 @@ import MovieDate from './MovieDate'
 
 const Diaries = (props) => {
 	return (
-		<>
+		<div>
 		{props.films.map((movie, index) => (
 			<Item style={{marginLeft:"5%", marginRight:"5%"}}>
                 <div onClick={() => props.handleDiaryClick(movie)}>
@@ -21,11 +21,11 @@ const Diaries = (props) => {
                 <Header floated="left"><br></br>
                     <MovieDate film={movie} key={movie.imdbID}/>
                 </Header>
-				<Image size="tiny" style={{ marginLeft:"13%", alignContent:"left"}} src={movie.Poster} alt='movie'/>
+				<Image style={{height:"110px", width:"75px", marginLeft:"13%", alignContent:"left"}} src={movie.Poster} alt='movie'/>
                 <Divider></Divider>
             </Item>
 		))}
-        </>
+        </div>
 	)
 }
 
