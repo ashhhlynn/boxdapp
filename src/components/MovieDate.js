@@ -1,7 +1,8 @@
-import { Button, Label} from 'semantic-ui-react'
-import React, { Component } from 'react';
+import { Label, Icon} from 'semantic-ui-react'
+import React, { Component } from 'react'
 
 export default class MovieDate extends Component {
+
     state = { date: 0 }
 
     componentDidMount = () => {
@@ -10,13 +11,12 @@ export default class MovieDate extends Component {
     }
 
     render() {
-        const { date } = this.state
         return (
-            <div>
-                <Label style={{backgroundColor:"#FFFEEF", color:"black"}}>
-                    <h3><b>{date}</b></h3>
+            <>
+                <Label inverted style={{backgroundColor:"#FFFEEF", color:"black"}}>
+                    <h5><Icon name='calendar alternate'></Icon><b>{this.state.date}</b></h5><br></br>
                 </Label>
-            </div>
+            </>
         )
     }
 }

@@ -1,7 +1,8 @@
 import { Rating } from 'semantic-ui-react'
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class MovieRating extends Component {
+
     state = { rating: 0 }
 
     componentDidMount = () => {
@@ -15,14 +16,13 @@ export default class MovieRating extends Component {
     }
 
     render() {
-        const { rating } = this.state
         return (
-        <div>
+            <>
             Rating: 
-            <Rating icon="star" rating={this.state.rating}  
+             <Rating icon="star" color="white" rating={this.state.rating}  
                 maxRating={5} onRate={this.handleRating} 
             />
-        </div>
+            </>
         )
     }
 }

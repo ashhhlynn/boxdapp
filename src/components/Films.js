@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, Reveal, Popup, Button, Icon, Image } from 'semantic-ui-react';
+import React from 'react'
+import { Card, Popup, Icon, Image } from 'semantic-ui-react'
 
 const Films = (props) => {
 	const DiaryComponent = props.diaryComponent;
@@ -7,23 +7,22 @@ const Films = (props) => {
 	return (
 		<Card.Group itemsPerRow={5}>
 			{props.films.map((movie, index) => (
-                 <Popup flowing hoverable
-                 trigger={
-				<Card>
-			        <Image src={movie.Poster} alt='movie'></Image>		  
-				</Card>		
-            }>
-            <div onClick={() => props.handleDiaryClick(movie)}>
-                <Popup.Content>
-                <Button floated="right" basic >
-                <center>Log Film to Diary <Icon name="add"/></center>
-            </Button>
-            </Popup.Content>
-        </div>
-            </Popup>
+                <Popup flowing hoverable
+                trigger={
+				    <Card>
+			            <Image style={{height:"300px", width:"220px"}}src={movie.Poster} alt='movie'></Image>		  
+				    </Card>		
+                }
+                >
+                    <div onClick={() => props.handleDiaryClick(movie)}>
+                        <Popup.Content>
+                            <center><i>Log Film to Diary</i> <Icon name="add"/></center>
+                        </Popup.Content>
+                    </div>
+                </Popup>
 			))}
 		</Card.Group>
-	);
-};
+	)
+}
 
 export default Films
