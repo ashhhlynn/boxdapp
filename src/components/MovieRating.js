@@ -19,8 +19,7 @@ export default class MovieRating extends Component {
         return (
             <div className="stars" >
                 Rating: <Rating icon='star' color='pink' rating={this.state.rating}  
-                maxRating={5}  onRate={this.handleRating} 
-                />
+                maxRating={5}  onRate={this.handleRating} />
             </div>
         )
     }

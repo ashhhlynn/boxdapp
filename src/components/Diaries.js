@@ -9,8 +9,8 @@ const Diaries = (props) => {
 		{props.films.map((movie, index) => (
 			<Item style={{marginLeft:"5%", marginRight:"5%"}}>
                 <div onClick={() => props.handleDiaryClick(movie)}>
-                    <Button floated="right" size="mini" inverted basic>
-                        <center><Icon name="delete"/></center>
+                    <Button floated="right" size="mini" style={{width:"40px"}} inverted basic>
+                        <center><Icon size="small" name="delete" /></center>
                     </Button>
 				</div>
                 <Header as="h5" floated="right" style={{color:"white", textAlign:"right"}}>
