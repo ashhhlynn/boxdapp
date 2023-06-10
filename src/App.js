@@ -39,7 +39,7 @@ const App = () => {
       setDiaries(newDiaryList);
       saveToLocalStorage(newDiaryList);
       var today = new Date(),
-      datey = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+      datey = (today.getMonth() + 1) + '-' + today.getDate();
       localStorage.setItem('date'+ film.imdbID, datey);
   };
 
@@ -79,7 +79,6 @@ const App = () => {
         :
           <></>
         }
-        <Divider></Divider>
         <Diaries
 					films={diaries}
           handleDiaryClick={removeDiaryFilm}
