@@ -6,9 +6,9 @@ const Films = (props) => {
 	return (
 		<Card.Group itemsPerRow={5}>
 			{props.films.map((movie, index) => (
-                <Popup flowing hoverable
+                <Popup flowing hoverable key={index}
                 trigger={
-				    <Card>
+				    <Card >
 			            <Image style={{height:"300px", width:"220px"}}src={movie.Poster} alt='movie'></Image>		  
 				    </Card>		
                 }

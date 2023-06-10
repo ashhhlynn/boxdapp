@@ -20,7 +20,7 @@ const WelcomeFilms = () => {
 	return (
         <Card.Group itemsPerRow={7}>
             {welcomeMovies.map((wm) => (
-                <Card>
+                <Card key={wm.Title}>
                     <Image style={{height:"220px", width:"200px"}} src={wm.Poster}/>
                 </Card>
 	        ))}

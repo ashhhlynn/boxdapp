@@ -46,7 +46,7 @@ const App = () => {
       const newDiaryList = diaries.filter(
         (diary) => diary.imdbID !== film.imdbID
       )
-      setDiaries(newDiaryList);
+      setDiaries(newDiaryList)
       saveToLocalStorage(newDiaryList)
   };	
   
