@@ -1,13 +1,12 @@
-import './App.css';
+import './App.css'
 import 'semantic-ui-css/semantic.min.css'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { Icon, Menu, Divider, Container } from 'semantic-ui-react'
-import WelcomeFilms from './components/WelcomeFilms';
-import Films from './components/Films';
-import Diaries from './components/Diaries';
-import SearchBox from './components/SearchBox';
-
-import Footer from './components/Footer';
+import WelcomeFilms from './components/WelcomeFilms'
+import Films from './components/Films'
+import Diaries from './components/Diaries'
+import SearchBox from './components/SearchBox'
+import Footer from './components/Footer'
 
 const App = () => {
 	const [films, setFilms] = useState([])
@@ -15,8 +14,8 @@ const App = () => {
   const [searchValue, setSearchValue] = useState('')
   const getMovieRequest = async (searchValue) => {
 		const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
-		const response = await fetch(url);
-		const responseJson = await response.json();
+		const response = await fetch(url)
+		const responseJson = await response.json()
 		if (responseJson.Search) {
 			setFilms(responseJson.Search)
 		}
@@ -35,25 +34,25 @@ const App = () => {
   }, [])
 
   const addDiaryFilm = (film) => {
-      const newDiaryList = [...diaries, film];
-      setDiaries(newDiaryList);
-      saveToLocalStorage(newDiaryList);
+      const newDiaryList = [...diaries, film]
+      setDiaries(newDiaryList)
+      saveToLocalStorage(newDiaryList)
       var today = new Date(),
-      datey = (today.getMonth() + 1) + '-' + today.getDate();
-      localStorage.setItem('date'+ film.imdbID, datey);
-  };
+      date = (today.getMonth() + 1) + '-' + today.getDate()
+      localStorage.setItem('date'+ film.imdbID, date)
+  }
 
   const removeDiaryFilm = (film) => {
       const newDiaryList = diaries.filter(
         (diary) => diary.imdbID !== film.imdbID
-      );
+      )
       setDiaries(newDiaryList);
-      saveToLocalStorage(newDiaryList);
+      saveToLocalStorage(newDiaryList)
   };	
   
   const saveToLocalStorage = (items) => {
-		localStorage.setItem('react-movie-app-diaries', JSON.stringify(items));
-	};  
+		localStorage.setItem('react-movie-app-diaries', JSON.stringify(items))
+	}
 
   return (
     <div className="app" style={{backgroundColor:"#1a1f22", minHeight:"100vh"}} >
@@ -89,4 +88,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App
