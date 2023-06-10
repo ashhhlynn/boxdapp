@@ -6,8 +6,8 @@ import WelcomeFilms from './components/WelcomeFilms';
 import Films from './components/Films';
 import Diaries from './components/Diaries';
 import SearchBox from './components/SearchBox';
-import AddDiary from './components/AddDiary';
-import RemoveDiary from './components/RemoveDiary';
+
+import Footer from './components/Footer';
 
 const App = () => {
 	const [films, setFilms] = useState([])
@@ -56,7 +56,7 @@ const App = () => {
 	};  
 
   return (
-    <div className="app" style={{backgroundColor:"#1a1f22"}} >
+    <div className="app" style={{backgroundColor:"#1a1f22", minHeight:"100vh"}} >
       <Menu style={{backgroundColor:"#15191b", color:"white", height:"100px"}}>
 				<Menu.Menu style={{marginLeft:"5%", marginTop:".5%"}} position="left"><br></br>
 					<h1>Boxd.</h1>
@@ -66,21 +66,22 @@ const App = () => {
 					<Icon style={{marginTop:"0%", marginRight:"-300%"}} size="large" name="search"/>
 				</Menu.Menu>
 			</Menu>
-      <Container>
+      <Container >
         <WelcomeFilms/>
         <Divider></Divider>
         <Films
 					films={films}
           handleDiaryClick={addDiaryFilm}
-          diaryComponent={AddDiary}
         />
+        <Divider></Divider>
+        <h2>Your Diary</h2>
         <Divider></Divider>
         <Diaries
 					films={diaries}
           handleDiaryClick={removeDiaryFilm}
-					diaryComponent={RemoveDiary}
         />
       </Container>
+      <Footer/>
     </div>
   )
 }
